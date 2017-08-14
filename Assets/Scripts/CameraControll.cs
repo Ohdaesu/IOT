@@ -11,11 +11,12 @@ public class CameraControll : MonoBehaviour {
 	public Transform lookAt;
 	public float sensivityX = 4.0f;
 	public float sensivityY = 1.0f;
+	public float distance = 10.0f;
 
 	private Transform camTransform;
 	private Camera cam;
 
-	private float distance = 10.0f;
+
 	private float currentX = 0.0f;
 	private float currentY = 0.0f;
 
