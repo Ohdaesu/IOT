@@ -15,6 +15,10 @@ public class OpeningDoor : MonoBehaviour, IPointerClickHandler {
 
 	public void OnPointerClick (PointerEventData evd)
 	{
+		toggleMove ();
+	}
+	public void toggleMove ()
+	{
 		if (!open) { //close door
 			_animation.Play("DoorOpen");
 			open = true;

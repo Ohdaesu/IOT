@@ -10,8 +10,17 @@ using System;
 
 public class mqttTest : MonoBehaviour {
 
+	public GameObject receiver;
+	public string [] msg;
 	public String subTopic;
+	public String pubTopic;
+
+	private bool isReceive = false;
+	private string receiveMsg;
+
+
 	private MqttClient client;
+
 	// Use this for initialization
 	void Start () {
 		// create client instance 
@@ -30,16 +39,27 @@ public class mqttTest : MonoBehaviour {
 	}
 	void client_MqttMsgPublishReceived(object sender, MqttMsgPublishEventArgs e) 
 	{ 
-		Debug.Log("Received: " + System.Text.Encoding.UTF8.GetString(e.Message)  );
+		
+		Debug.Log("Received: " + System.Text.Encoding.UTF8.GetString(e.Message));
+		receiveMsg = System.Text.Encoding.UTF8.GetString (e.Message);
+		isReceive = true;
 	} 
-
-	public void pubMSG()
+		
+	public void pubMSG(int msgNum)
 	{
+		//if (msgNum > msg.Length - 1)
+		//	msgNum = msg.Length - 1;
 		Debug.Log("sending...");
-		client.Publish("hello/world1", System.Text.Encoding.UTF8.GetBytes("Sending from Unity3D!!!"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
+		client.Publish(pubTopic, System.Text.Encoding.UTF8.GetBytes(msg[msgNum]), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
 		Debug.Log("sent");
 	}
 	// Update is called once per frame
-	void Update () {
+	public void Update ()
+	{
+		if (isReceive)
+		{
+			receiver.GetComponent<AbstractReceiver> ().receiveHandler (receiveMsg);
+			isReceive = false;
+		}
 	}
 }
