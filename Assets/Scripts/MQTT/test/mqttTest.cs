@@ -36,7 +36,7 @@ public class mqttTest : MonoBehaviour {
 	public void pubMSG()
 	{
 		Debug.Log("sending...");
-		client.Publish("hello/world", System.Text.Encoding.UTF8.GetBytes("Sending from Unity3D!!!"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
+		client.Publish("hello/world1", System.Text.Encoding.UTF8.GetBytes("Sending from Unity3D!!!"), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);
 		Debug.Log("sent");
 	}
 	// Update is called once per frame
