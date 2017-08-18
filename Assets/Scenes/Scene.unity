@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 133360284}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0187419888f217944bc599b2e15cdffb, type: 3}
   m_Name: 
@@ -2144,6 +2144,8 @@ MonoBehaviour:
   - Send
   subTopic: house/door
   pubTopic: house/doorDev
+  ip: 192.168.0.22
+  port: 1883
 --- !u!1 &133505789
 GameObject:
   m_ObjectHideFlags: 0
@@ -14630,7 +14632,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 985501740}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0187419888f217944bc599b2e15cdffb, type: 3}
   m_Name: 
@@ -14640,6 +14642,8 @@ MonoBehaviour:
   - I'm the fan
   subTopic: house/fan
   pubTopic: house/fanDev
+  ip: 192.168.0.22
+  port: 1883
 --- !u!54 &985501744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -26011,6 +26015,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
+--- !u!65 &1723100055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723100052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &1723100056
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1723100052}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1736636021
 GameObject:
   m_ObjectHideFlags: 0

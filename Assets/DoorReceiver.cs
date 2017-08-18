@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DoorReceiver : AbstractReceiver {
+public class DoorReceiver : AbstractReceiver, IPointerClickHandler {
 
 	public GameObject door;
 
@@ -10,5 +11,9 @@ public class DoorReceiver : AbstractReceiver {
 	{
 		if(msg == "toggle")
 			door.GetComponent<OpeningDoor> ().toggleMove ();
+	}
+	public void OnPointerClick (PointerEventData evd)
+	{
+		door.GetComponent<OpeningDoor> ().toggleMove ();
 	}
 }

@@ -11,9 +11,11 @@ using System;
 public class mqttTest : MonoBehaviour {
 
 	public GameObject receiver;
-	public string [] msg;
+	public String [] msg;
 	public String subTopic;
 	public String pubTopic;
+	public String ip = "192.168.0.22";
+	public int port = 1883;
 
 	private bool isReceive = false;
 	private string receiveMsg;
@@ -24,7 +26,7 @@ public class mqttTest : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// create client instance 
-		client = new MqttClient(IPAddress.Parse("192.168.0.22"),1883 , false , null ); 
+		client = new MqttClient(IPAddress.Parse(ip),port, false , null ); 
 
 		// register to message received 
 		client.MqttMsgPublishReceived += client_MqttMsgPublishReceived; 
