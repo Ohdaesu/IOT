@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class WallsButton : MonoBehaviour  {
 
-	public GameObject casa;
+	public GameObject [] casas;
 	private bool show = true;
 
 	public void Start()
@@ -21,12 +21,15 @@ public class WallsButton : MonoBehaviour  {
 		if (show) 
 		{
 			show = false;
-			casa.SetActive (false);
+			foreach (GameObject casa in casas){
+				casa.SetActive (false);
+			}
 		} else 
 		{
 			show = true;
-			casa.SetActive (true);
-
+			foreach (GameObject casa in casas){
+				casa.SetActive (true);
+			}
 		}
 	}
 }

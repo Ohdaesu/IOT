@@ -49,7 +49,8 @@ public class mqttTest : MonoBehaviour {
 		
 	public void pubMSG(int msgNum)
 	{
-		//if (msgNum > msg.Length - 1)
+		
+		//if (msgNum >= msg.Length)
 		//	msgNum = msg.Length - 1;
 		Debug.Log("sending...");
 		client.Publish(pubTopic, System.Text.Encoding.UTF8.GetBytes(msg[msgNum]), MqttMsgBase.QOS_LEVEL_EXACTLY_ONCE, true);

@@ -12,6 +12,7 @@ public class CameraControll : MonoBehaviour {
 	public float sensivityX = 4.0f;
 	public float sensivityY = 1.0f;
 	public float distance = 10.0f;
+	public float maxDistance = 10.0f;
 
 	private Transform camTransform;
 	private Camera cam;
@@ -48,5 +49,17 @@ public class CameraControll : MonoBehaviour {
 	public void setLookAt(Transform newLookAtTransform)
 	{
 		lookAt = newLookAtTransform;
+	}
+
+	public void incrementDistance()
+	{
+		if(distance > 1)
+			distance--;
+	}
+
+	public void decrementDistance()
+	{
+		if(distance < maxDistance)
+			distance++;
 	}
 }
